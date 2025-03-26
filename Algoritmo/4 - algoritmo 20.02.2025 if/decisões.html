@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>decisão</title>
+</head>
+<body>
+    <center>
+        <input type="number" id="input_num">
+
+        <br><br>
+        
+        <button onclick="analisar()">Analisar</button>
+        
+        <br><br>
+        
+        <div id="div_mensagem"></div>
+    </center>
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        var num = Number(input_num.value);
+
+        if(num <= 42){
+            alert (`O número ${num} é menor que 42!`);
+        }
+        
+        if (num >= 42){
+            alert (`O número ${num} é maior que 42!`);
+        }
+        
+        if (num == 42) {
+            alert (`O número ${num} é igual que 42!`);
+        }
+        
+        if (num != 42) {
+            alert (`O número ${num} é igual que 42!`);
+        }
+    }
+</script>

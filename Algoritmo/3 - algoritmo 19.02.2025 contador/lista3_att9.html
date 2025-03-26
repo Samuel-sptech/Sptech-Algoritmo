@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att9</title>
+</head>
+<body>
+    Quantas Horas teve de sono:
+    <input type="number" id="input_sono">
+
+    <br><br>
+
+    <button onclick="descricao()">Calcular Sono</button>
+    <br><br>
+    <div id="div_descSono">  </div>
+</body>
+</html>
+
+<script>
+
+    function descricao(){
+        var sono = Number(input_sono.value);
+
+        var faseUm = sono * 0.05;
+        var faseDois = sono * 0.45;
+        var faseTres = sono * 0.30;
+        var faseRem = sono * 0.20;
+
+        div_descSono.innerHTML = `Ao dormir ${sono} horas, você dormiu:
+        <br>
+        ${faseUm} horas na fase 1  
+        <br>
+        ${faseDois} horas na fase 2  
+        <br>  
+        ${faseTres} horas na fase 3  
+        <br>
+        ${faseRem} horas na fase REM`;
+    }
+
+</script>

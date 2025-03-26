@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Att8</title>
+</head>
+<body>
+    Valor: <br>
+    <input type="number" id="input_valor">
+
+    <br><br>
+
+    <button onclick="adcionar()">Depositar</button>
+    <button onclick="subtrair()">Retirar</button>
+
+</body>
+</html>
+
+<script>
+    var cont = 0
+
+    function adcionar() {
+        var valor = Number(input_valor.value);
+        cont = cont + valor;
+        alert(`Depósito de R$${valor} efetuado! Saldo atual: R$${cont}`); 
+    }
+
+    function subtrair() {
+        var valor = Number(input_valor.value);
+        cont = cont - valor;
+        alert(`Retirada de R$${valor} efetuada! Saldo atual: R$${cont}`);
+    }
+</script>

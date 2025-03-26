@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Escolha o pokémon inicial: <br>
+     <b>Bulbasaur, Charmander ou Squirtle </b> <br>
+    <input type="text" id="inp_poke">
+
+    <br></br>
+
+    <button onclick="verificar()">Escolher Pokémon</button>
+
+    <br>
+
+    <div id="div_msg"></div>
+
+    <img id="img_poke">
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var poke = inp_poke.value;
+
+        if (poke == 'Bulbasaur' ) {
+            img_poke.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jPcmvEIhGz6SO1rlWUtanAWVBm37BgcxFg&s" ;
+
+        } else if (poke == 'Charmander' ) {
+            img_poke.src = "https://www.goodvinil.pt/4610-home_default/pokemon-charmander.jpg";
+
+        } else if (poke == 'Squirtle' ) {
+            img_poke.src = "https://www.goodvinil.pt/4611/pokemon-squirtle.jpg";
+
+        } else{
+            div_msg.innerHTML = `Pokémon não reconhecido.`;
+
+            inp_poke.value = "";
+        }
+
+
+    }
+</script>

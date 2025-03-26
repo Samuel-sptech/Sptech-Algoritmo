@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att2</title>
+</head>
+<body>
+
+    Refri por dia:
+    <input type="text" id="input_refri">
+    <button onclick="qtdRefri()">Quantos refri?</button>
+    
+    <div id="div_comentario"></div>
+</body>
+</html>
+
+<script>
+    function qtdRefri(){
+        var refri = Number(input_refri.value);
+        var total = refri * 365;
+
+        div_comentario.innerHTML = `Por ano consome ${total}!`;
+
+        if (total >= 500) {
+            div_comentario.innerHTML += "<br> Cuidado com a diabetes!";
+        }
+    }
+</script>

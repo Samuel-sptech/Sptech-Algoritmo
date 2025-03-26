@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att 1</title>
+</head>
+<body>
+
+    <h1>Nascimento</h1>
+
+    Cidade Natal: <input id="cidNat" type="text">
+    <br> 
+    Ano de Nascimento: <input id="anoNasc" type="number">
+    <br> <br>
+    <button onclick="nascimento()">Cadastrar</button>
+    
+</body>
+</html>
+
+<script>
+    function nascimento() {
+        alert ("Você nasceu na cidade de " + cidNat.value + " em " + anoNasc.value)
+    }
+</script>

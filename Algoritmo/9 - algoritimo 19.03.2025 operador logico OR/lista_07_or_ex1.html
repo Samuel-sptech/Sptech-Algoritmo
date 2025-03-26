@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Qual o nome da Fruta:
+    <select id="select_fruta">
+        <option selected disabled value="#">Escolha uma opção</option>
+        <option value="2">Uva      </option>
+        <option value="3">Abacaxi  </option>
+        <option value="4">Morango  </option>
+        <option value="5">melancia </option>
+    </select>
+
+    <br></br>
+
+    <button onclick="verificar()">Vai comer?</button>
+
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var fruta = Number(select_fruta.value);
+
+        if (fruta == 2 || fruta == 3) {
+            alert("Sim, vai comer" + fruta);
+        } else {
+            alert("A fruta "+ fruta +" ela não come"); 
+        }
+    }
+</script>

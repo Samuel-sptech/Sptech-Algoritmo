@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Velocidade que o motorista estava dirigindo (km/h):
+    <input type="text" id="inp_velocidade">
+
+    <br></br>
+
+    Limite de velocidade da via (km/h):
+    <input type="text" id="inp_limite">
+
+    <br></br>
+
+    <button onclick="verificar()">Verificar</button>
+
+    <br>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var velocidade = Number(inp_velocidade.value);
+        var limite = Number(inp_limite.value);
+
+        var porcenagem = limite * 1.2;
+
+        if (velocidade <= limite) {
+            div_msg.innerHTML = `Velocidade dentro do limite. Boa direção!`;
+            
+        } else if (velocidade <= porcenagem) {
+            div_msg.innerHTML = `Atenção! Excedendo o limite permitido.`;
+        } else {
+            div_msg.innerHTML = `Multa grave! Velocidade muito acima do permitido.`;
+        }
+
+    }
+</script>

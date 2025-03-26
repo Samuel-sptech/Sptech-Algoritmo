@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att10</title>
+</head>
+<body>
+    Quantidade de votos do Candidato 1: <br>
+    <input type="number" id="input_C1">
+    <br> <br>
+    Quantidade de votos do Candidato 2: <br>
+    <input type="number" id="input_C2">
+    <br> <br>
+    Quantidade de votos em Branco: <br>
+    <input type="number" id="input_Branco">
+    <br> <br>
+    Quantidade de votos Nulos: <br>
+    <input type="number" id="input_Nulo">
+
+    <br><br>
+    
+    <button onclick="resultado()">Resultado da Eleição</button>
+
+    <br><br>
+    <div id="div_votos"></div>
+
+</body>
+</html>
+
+<script>
+    function resultado() {
+        var cand1 = Number(input_C1.value);
+        var cand2 = Number(input_C2.value);
+        var branco = Number(input_Branco.value);
+        var nulo = Number(input_Nulo.value);
+
+        var invalido = branco + nulo;
+
+        var total = cand1 + cand2 + invalido;
+
+        var c1 = (cand1/total) * 100;
+        var c2 = (cand2/total) * 100;
+        var inv =(invalido/total) * 100;
+
+       div_votos.innerHTML = `Total de votos: ${total}
+        Candidato A: ${c1}% (${cand1} votos)  
+
+        Candidato B: ${c2}% (${cand2} votos)  
+
+        Inválidos: ${inv}% (${invalido} votos)  `;
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    
+    <div id="div_contagem"> O Saldo atual em R$ 0 </div> 
+
+    <br> <br>
+
+    <button onclick="acrescentar()"> Receber 100 </button>
+    <button onclick="tirar()"> Pagar 50 </button>
+
+</body>
+</html>
+
+<script> 
+ var valor = 0;
+    
+    function acrescentar() {
+        valor = valor + 100;
+
+        alert(`Transferência de R$100 recebida! 
+        Saldo atual: R$${valor}`);
+
+        div_contagem.innerHTML = `O Saldo atual em R$ ${valor}` ;
+
+    }
+
+    function tirar() {
+        valor = valor - 50;
+
+        alert(`Pagamento de R$50 efetuado!
+        Saldo atual: R$${valor}`);
+        div_contagem.innerHTML = `O Saldo atual em R$ ${valor}`;        
+    }
+</script>

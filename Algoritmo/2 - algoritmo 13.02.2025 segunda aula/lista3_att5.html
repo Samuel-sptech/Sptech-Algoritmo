@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SPtech</h1>
+
+    Qual seu nome:
+    <input type="text" id="input_nome">
+     
+    <br> <br>
+    
+    Qual sua nota na prova semestral:
+    <input type="text" id="input_semestre">
+    
+    <br> <br>
+    
+    Qua sua nota na prova continuada:
+    <input type="text" id="input_continuada">
+    <br>
+    <button onclick="media()">Média</button>
+
+</body>
+</html>
+
+<script>
+
+    function media() {
+        
+        var nome = input_nome.value;
+        var semes = Number(input_semestre.value);
+        var conti = Number(input_continuada.value);
+        var calSemes = semes*0.6;
+        var calConti = conti*0.4;
+        var total = calConti+calSemes;
+
+        alert('A média do aluno ' + nome + " será de " + total);
+        
+    }
+</script>

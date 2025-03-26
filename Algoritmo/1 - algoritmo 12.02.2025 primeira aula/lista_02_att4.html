@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Logradouro</h1>
+
+    Nome da Rua/Avenida/Vila: <input id="nome_RAV" type="text">
+    <br> <br>
+    Número da Casa: <input id="num_casa" type="number">
+    <br> <br>
+    <button onclick="lugar()">Onde eu moro</button>
+</body>
+</html>
+
+<script>
+    function lugar (){
+        alert("Seu logradouro é " + nome_RAV.value)
+        alert("O número do seu logradouro é " + num_casa.value)
+    }
+</script>

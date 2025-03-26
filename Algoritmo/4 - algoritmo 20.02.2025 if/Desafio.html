@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Acerte o número</h1>
+
+    <p>Escolha um número de 4 dígitos e veja se você acerta a senha</p>
+
+    <label>Digite 4 números:</label>
+    <br>
+    <input placeholder="Digite 4 números" type="number" id="input_num">
+
+    <br></br>
+
+    <button onclick="verificar()">Esta é sua resposta?</button>
+
+    <div id="div_mensagem"></div>
+    </center>
+</body>
+</html>
+
+<script>
+
+    var cont = 1;
+    var numCerto = 1234;
+
+    function verificar() {
+        var num = Number(input_num.value);
+            
+        if(num < numCerto){
+            alert(`Está frio, tente de novo!`);
+            div_mensagem.innerHTML += `<b style= "color:blue"> ${num} </b> <br>`;
+            cont += 1;
+        }
+
+        if(num > numCerto){
+            alert(`Pegou fogo, tenta de novo!`);
+            div_mensagem.innerHTML += `<b style= "color:orange"> ${num} </b> <br>`;
+            cont += 1;
+        }
+
+        if(num == numCerto){
+            alert(`Olha só, o cara virou vidente`);
+            div_mensagem.innerHTML = `<b style= "color:green"> Depois de ${cont} tentativas você acertou! o número é ${numCerto} </b>`;
+        }
+
+    }
+</script>

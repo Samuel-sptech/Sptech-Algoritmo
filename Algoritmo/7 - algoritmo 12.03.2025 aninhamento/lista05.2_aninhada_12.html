@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Como está se sentindo hoje: 
+    <select id="slt_humor" placeholder="hunor de hoje é"> 
+        <option>Feliz</option>
+        <option>Triste</option>
+        <option>Bravo</option>
+        <option>Surpreso</option>
+        <option>Cansado</option>
+    </select>
+    <br></br>
+
+    <button onclick="mostrar()">Mostrar Humor</button>
+
+    <br>
+
+    <img id="img_emocao">
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        var emocao = slt_humor.value;
+
+        if (emocao == "Feliz") {
+            img_emocao.src =`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeekFGy9rZzrrjfkWKPJSTZUuIxGoPdAgv8Q&s`;
+            
+        } else if (emocao == "Triste") {
+            img_emocao.src =`https://img.freepik.com/vetores-premium/emoticon-triste_1303870-82.jpg?semt=ais_hybrid`;
+
+        } else if (emocao == "Bravo") {
+            img_emocao.src =`https://http2.mlstatic.com/D_NQ_NP_626110-MLB72186260521_102023-O.webp`;
+
+        } else if (emocao == "Surpreso") {
+            img_emocao.src =`https://previews.123rf.com/images/yayayoy/yayayoy1609/yayayoy160900007/64036800-emoticon-surpreso-chocado-assustado-ou-at%C3%B4nito-com-olhos-selvagens-saindo-e-mand%C3%ADbula-caindo.jpg`;
+
+        } else if (emocao == "Cansado"){
+            img_emocao.src =`https://thumbs.dreamstime.com/z/emoticon-desesperado-ressaca-deprimida-ou-emoji-cansado-179809077.jpg`;
+
+        }
+    }
+</script>

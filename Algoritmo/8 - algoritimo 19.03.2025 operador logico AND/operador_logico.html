@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu saldo: <br>
+    <input type="text" id="inp_saldo">
+
+    <br>
+    
+    <button onclick="analisar()">Analisar Saldo</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<!-- <script> só com if
+    function analisar() {
+        var saldo = Number(inp_saldo.value);
+
+        if (saldo > 1000) {
+            div_msg.innerHTML =`Busque renda extra`;
+        }
+
+        if (saldo >= 1000) {
+            if (saldo <=2000) {
+                div_msg.innerHTML = `Em torno de 1 salário mínimo`;
+            }
+        }
+
+        if (saldo > 2000) {
+            div_msg.innerHTML = `Mais de 1 salário minimo`;
+        }
+
+    }
+</script> -->
+
+<!-- <script> com if else
+    function analisar() {
+        var saldo = Number(inp_saldo.value);
+
+        if (saldo > 1000) {
+            div_msg.innerHTML =`Busque renda extra`;
+        } else if (saldo <=2000) {
+                div_msg.innerHTML = `Em torno de 1 salário mínimo`;
+            }
+         else {
+            div_msg.innerHTML = `Mais de 1 salário minimo`;
+        }
+
+    }
+</script> -->

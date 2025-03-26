@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Saldo em Conta:
+    <input type="text" id="input_saldo">
+
+    <br></br>
+
+    <button onclick="calcular()">Ver finanças</button>
+
+    <div id="div_comentario"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var saldo = Number(input_saldo.value);
+
+        if(saldo < 0){
+            div_comentario.innerHTML = `<b style = "color:red"> Está devendo!</b>`;
+        }        
+
+        if(saldo > 0){
+            div_comentario.innerHTML = `<b style = "color:blue"> Saldo positivo! sorriso </b>`;
+        }
+        
+        if(saldo == 0){
+            div_comentario.innerHTML = `<b> Conta zerada </b>`;
+        }
+
+
+    }
+</script>

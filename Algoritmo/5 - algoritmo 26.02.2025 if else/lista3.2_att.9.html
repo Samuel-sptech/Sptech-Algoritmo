@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Última série assistida:
+    <input type="text" id="input_serie">
+
+    <br></br>
+
+    Total de episódios:
+    <input type="text" id="input_qtdSerie">
+
+    <br></br>
+
+
+    <button onclick="calcular()">Verificar nível</button>
+
+    <div id="div_comentario"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var serie = input_serie.value;
+        var ep = Number(input_qtdSerie.value);
+
+        var  total = ep * 22 / 60; //total = ep * 22;
+
+        div_comentario.innerHTML = `Vejo que você gosta da série ${serie} `;
+
+        // if(total>= 1800)
+        if(total > 30){
+            div_comentario.innerHTML += `<br> Uau, você realmente gosta dessa série!`;
+        } 
+    }
+</script>

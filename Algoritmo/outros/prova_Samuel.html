@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Samuel</title>
+</head>
+<body>
+
+    <p>Energia consumida (em kWh):</p>
+    <input type="number" id="input_energia">
+
+    <br></br>
+
+    <p>Bandeira tarifária:</p>
+    <input type="text" id="input_bandeira">
+    
+
+    <br></br>
+
+    <p>MB do plano de internet:</p>
+    <input type="number" id="input_internet">
+
+    <br></br>
+
+    <p>Existe uma linha telefônica vinculado a internet?</p>
+    <input type="text" id="input_telefone">
+
+    <br></br>
+
+    <button onclick="calcular()">Calcular Despesas Fixas</button>
+    
+    <br>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var energia = Number(input_energia.value);
+        var bandeira = input_bandeira.value;
+        var internet = Number(input_internet.value);
+        var telefone = input_telefone.value;
+        
+
+        // Calculo Energia
+        if (energia <= 50) {
+            var desconto = energia * 0.1;
+            energia = energia - desconto;
+        }
+
+
+        if (bandeira == "verde" ) {
+            var calEnergia = 0.75 * energia;
+        }
+
+        if (bandeira == "amarelo" ) {
+            var calEnergia = 0.90 * energia;
+        }
+
+        if (bandeira == "vermelho" ) {
+            var calEnergia = 1.00 * energia;
+        }
+
+
+        // Calculo Internet/telefone
+        var calNet = 0.80 * internet;
+
+        if (telefone != "sim") {
+            var descNet = 0.075 * calNet;
+            calNet = calNet - descNet;
+        } else {
+            var acrescimo = calNet * 0.35;
+            calNet = calNet + acrescimo;
+        }
+
+        var total = calNet + calEnergia;
+
+
+        div_mensagem.innerHTML = ` Com o consumo de ${energia} kWh na bandeira ${bandeira}, a conta de energia totaliza R$${calEnergia}.  <br>
+        Com o consumo de ${internet} MB de internet, o valor do plano de internet/telefone totaliza R$${calNet}.  <br>
+        Gasto total de despesas mensal: R$ ${total}. `;
+
+    }
+</script>

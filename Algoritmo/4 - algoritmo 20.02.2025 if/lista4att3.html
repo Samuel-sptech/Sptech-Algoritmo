@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    NOTA 1:
+    <input type="text" id="input_n1">
+    NOTA 2:
+    <input type="text" id="input_n2">
+    NOTA 3:
+    <input type="text" id="input_n3">
+
+    <button onclick="calculo()">Analisar desempenho</button>
+
+    <div id="div_comentario"></div>
+</body>
+</html>
+
+<script>
+    function calculo() {
+        var n1 = Number(input_n1.value);
+        var n2 = Number(input_n2.value);
+        var n3 = Number(input_n3.value);  
+        var total = (n1 + n2 + n3)/3
+        
+        div_comentario.innerHTML = `Sua média foi de ${total}`;
+
+        if (9.4 <= total) {
+            div_comentario.innerHTML += `<br> Parabéns, você é fora de série!`; 
+            
+        }
+    }
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prova corrigido</title>
+</head>
+<body>
+
+    Quantidade de energia (Kwh) <br>
+    <input type="number" id="inp_kwh"> <br></br>
+    
+    Bandeira tarifáia de energia <br>
+    <input type="text" id="inp_bandeira"> <br></br>
+    
+    Quantidadede MB <br>
+    <input type="text" id="inp_mb"> <br></br>
+    
+    Possui uma linha tefefonica vinculada? <br>
+    <input type="text" id="inp_telefone"> <br></br>
+
+    <button onclick="calcular()">Calcular Cespesas Fixas</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var kwh = Number(inp_kwh.value); 
+        var bandeira = inp_bandeira.value;
+        var mb = Number(inp_mb.value);
+        var telefone = inp_telefone.value;
+
+        var conta_internet = 0;
+        var conta_energia = kwh;
+
+        if (bandeira == "verde") {
+             conta_energia = kwh * 0.75;            
+        }
+        
+        if (bandeira == "amarelo") {
+             conta_energia = kwh * 0.90;            
+        }
+
+        if (kwh <= 50) {
+            conta_energia = conta_energia * 0.9;
+        }
+
+
+        if (telefone == "sim") {
+            conta_internet = mb * 0.8 * 1.35;
+        }
+
+        if (telefone == "não"){
+            conta_internet = conta_internet - (conta_energia * 0.075);
+        }
+
+        var total = conta_energia + conta_internet;
+
+        div_msg.innerHTML = `${kwh} com bandeira ${bandeira} = ${conta_energia} <br>
+                                ${mb} = ${conta_internet} <br>
+                                total é: ${total}`;
+
+        
+    }
+</script>

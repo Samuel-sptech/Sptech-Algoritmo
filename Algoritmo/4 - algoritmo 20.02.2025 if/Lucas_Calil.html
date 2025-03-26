@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Torre da Matemática</h1>
+    
+    <h3>Responda corretamente os 3 desafios matemáticos para chegar ao topo da torre!</h3>
+
+
+    <div> 
+        <p>Quanto é 105+65?</p>
+        
+        <input type="text" id="input_resp_adicao">
+        <button onclick="adicao()">Responder</button>
+        
+        <div id="div_comentario_adicao"></div>
+    </div>
+
+    <br>
+
+    <div>
+        <p>Quanto é 185-37?</p>
+        
+        <input type="text" id="input_resp_subtracao">
+        <button onclick="subtracao()">Responder</button>
+
+        <div id="div_comentario_subtracao"></div>
+    </div>
+
+    <br>
+
+    <div>    
+        <p>Ache o operador matemático 8x? = 536</p>
+        
+        <input type="text" id="input_resp_multiplicacao">
+        <button onclick="multiplicacao()">Responder</button>
+
+        <div id="div_comentario_multiplicacao"></div>   
+    </div>
+
+    <br>
+
+    <div>
+        <p>Ache 32% de 500</p>
+        
+        <input type="text" id="input_resp_porcentagem">
+        <button onclick="porcentagem()">Responder</button>
+
+        <div id="div_comentario_porcentagem"></div>
+    </div>
+
+    <br></br>
+    
+    <div id="div_comentario_final"></div>
+</body>
+</html>
+
+<script>
+    
+    var cont = 0
+
+
+    function adicao() {
+        var resposta = Number(input_resp_adicao.value);
+        
+        if (resposta != 170) {
+            alert(`Resposta errada, meu jovem! Tente de novo`);
+
+            div_comentario_adicao.innerHTML += `<b style="color: red"> Resposta errada ${resposta} </b> <br>`;
+
+            cont = 0;
+        } else {
+            alert(`Boa, gafanhoto! Você subiu um andar.`);
+
+            div_comentario_adicao.innerHTML += `<b style="color: green"> Resposta certa ${resposta} </b> <br>`;
+
+            cont += 1;
+        }
+
+        if (cont == 3) {
+             alert (`Parabéns! Você chegou ao topo da torre!`);
+
+             div_comentario_final.innerHTML = `<b style= "color: blue"> Pode pedir brinde para o JP! </b> <br>`;
+             div_comentario_final.innerHTML += `<br> <img src= https://cdn-icons-png.flaticon.com/512/3176/3176355.png>`;
+        }
+    }
+
+    function subtracao() {
+        var resposta = Number(input_resp_subtracao.value);
+        
+        if (resposta != 148) {
+            alert(`Resposta errada, meu jovem! Tente de novo`);
+
+            div_comentario_subtracao.innerHTML += `<b style="color: red"> Resposta errada ${resposta} </b> <br>`;
+
+            cont = 0;
+        } else {
+            alert(`Boa, gafanhoto! Você subiu um andar.`);
+
+            div_comentario_subtracao.innerHTML += `<b style="color: green"> Resposta certa ${resposta} </b> <br>`;
+
+            cont += 1;
+        }
+        
+        if (cont == 3) {
+            alert (`Parabéns! Você chegou ao topo da torre!`);
+
+            div_comentario_final.innerHTML = `<b style= "color: blue"> Pode pedir brinde para o JP! </b> <br>`;
+            div_comentario_final.innerHTML += `<br> <img src= https://cdn-icons-png.flaticon.com/512/3176/3176355.png>`;
+        }
+
+        
+    }
+
+    function multiplicacao() {
+        var resposta = Number(input_resp_multiplicacao.value);
+        
+        if (resposta != 67) {
+            alert(`Resposta errada, meu jovem! Tente de novo`);
+
+            div_comentario_multiplicacao.innerHTML += `<b style="color: red"> Resposta errada ${resposta} </b> <br>`;
+
+            cont = 0;
+        } else {
+            alert(`Boa, gafanhoto! Você subiu um andar.`);
+
+            div_comentario_multiplicacao.innerHTML += `<b style="color: green"> Resposta certa ${resposta} </b> <br>`;
+
+            cont += 1;
+        }
+        
+        if (cont == 3) {
+            alert (`Parabéns! Você chegou ao topo da torre!`);
+
+            div_comentario_final.innerHTML = `<b style= "color: blue"> Pode pedir brinde para o JP! </b> <br>`;
+            div_comentario_final.innerHTML += `<br> <img src= https://cdn-icons-png.flaticon.com/512/3176/3176355.png>`;
+        }
+
+        
+    }
+    
+    function porcentagem() {
+        var resposta = Number(input_resp_porcentagem.value);
+        
+        if (resposta != 160) {
+            alert(`Resposta errada, meu jovem! Tente de novo`);
+
+            div_comentario_porcentagem.innerHTML += `<b style="color: red"> Resposta errada ${resposta} </b> <br>`;
+
+            cont = 0;
+        } else {
+            alert(`Boa, gafanhoto! Você subiu um andar.`);
+
+            div_comentario_porcentagem.innerHTML += `<b style="color: green"> Resposta certa ${resposta} </b> <br>`;
+
+            cont += 1;
+        }
+        
+        if (cont == 3) {
+            alert (`Parabéns! Você chegou ao topo da torre!`);
+
+            div_comentario_final.innerHTML = `<b style= "color: blue"> Pode pedir brinde para o JP! </b> <br>`;
+            div_comentario_final.innerHTML += `<br> <img src= https://cdn-icons-png.flaticon.com/512/3176/3176355.png>`;
+        }
+
+        
+    }
+</script>

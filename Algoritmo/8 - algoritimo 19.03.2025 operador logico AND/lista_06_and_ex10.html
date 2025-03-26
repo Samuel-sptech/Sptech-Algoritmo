@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Quantas passagens deseja:
+    <input type="text" id="inp_qtdPassagem">
+
+    <br></br>
+
+    <button onclick="calcular()">Comprar</button>
+    
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var qtdPass = Number(inp_qtdPassagem.value);
+        var pass = 4.40;
+
+        var total = pass * qtdPass;
+
+        if (qtdPass >= 8 && qtdPass <= 50) {
+
+            if (qtdPass >= 8 && qtdPass <= 19) {
+                total = total * 0.97;
+
+            } else if (qtdPass >= 20 && qtdPass <= 49) {
+                total = total * 0.95;
+
+            } else {
+                total = total * 0.93;
+
+            }
+
+            div_msg.innerHTML = `Total a pagar: R$${total}`;
+
+        }else {
+            alert("Quantidade inválida para o Fidelidade!"); 
+        }
+
+    }
+</script>

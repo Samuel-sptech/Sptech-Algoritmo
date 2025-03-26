@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Informe um número:
+    <input type="number" id="input_tabuada">
+    <br><br>
+    <button onclick="tabuada()"> Ver Tabuada</button>
+
+    <br><br>
+
+    <div id="div_tabuada"></div>
+</body>
+</html>
+
+<script>
+
+var cont = 1;
+
+
+    function tabuada() {
+        var num = Number(input_tabuada.value);
+        var conta1 = num * 1;
+        var conta2 = num * 2;
+        var conta3 = num * 3;
+        var conta4 = num * 4;
+        var conta5 = num * 5;
+        var conta6 = num * 6;
+        var conta7 = num * 7;
+        var conta8 = num * 8;
+        var conta9 = num * 9;
+    
+        div_tabuada.innerHTML = `
+        ${num} X 1 = ${conta1}  
+         <br>
+        ${num} X 2 = ${conta2}  
+         <br>
+        ${num} X 3 = ${conta3}  
+         <br>
+        ${num} X 4 = ${conta4}  
+         <br>
+        ${num} X 5 = ${conta5}  
+         <br>
+        ${num} X 6 = ${conta6}  
+         <br>
+        ${num} X 7 = ${conta7}  
+         <br>
+        ${num} X 8 = ${conta8} 
+         <br>
+        ${num} X 9 = ${conta9}
+        `
+    }
+</script>

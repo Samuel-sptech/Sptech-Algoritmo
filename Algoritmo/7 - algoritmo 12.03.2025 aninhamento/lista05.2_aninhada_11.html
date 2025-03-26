@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Qual a humidade do ambiente:
+    <input type="text" id="inp_umidade">
+
+    <br></br>
+
+    <button onclick="verificar()">Verificar umidade</button>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var umid = Number(inp_umidade.value);
+
+        if (umid <= 12) {
+            div_msg.innerHTML = `Estado de Emergencia`;
+        } else if (umid <= 20) {
+            div_msg.innerHTML = `Estado de alerta`;
+
+        } else if (umid <= 30) {
+            div_msg.innerHTML = `Estado de atenção`;
+
+        } else if (umid <= 100){
+            div_msg.innerHTML = `Nenhum risco`;
+
+        } else {
+            alert(`resposta inválida, só pode ser inserido um valor entre 0 a 100`);
+
+            inp_umidade.value = "";
+        }
+
+    }
+</script>

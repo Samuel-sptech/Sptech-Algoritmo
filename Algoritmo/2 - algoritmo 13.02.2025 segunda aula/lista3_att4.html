@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ki Sayajin</h1>
+
+    Nome do guerreiro:
+    <input type="text" id="input_nome">
+
+    <br> <br>
+    Ki do guerreiro:
+    <input type="text" id="input_ki">
+
+    <br>
+    <button onclick="transformar()">Ver ki em cada forma</button>
+</body>
+</html>
+
+<script>
+    function transformar() {
+        var nome = input_nome.value;
+        var ki = Number(input_ki.value);
+        var SSJ1 = ki * 50;
+        var SSJ2 = ki * 100;
+
+        alert("Na forma Super Sayajin " + nome + " tem " + SSJ1 + " de Ki");
+        alert("Na forma Super Sayajin 2 " + nome + ", tem " + SSJ2 + " de Ki");
+        
+    }
+</script>
