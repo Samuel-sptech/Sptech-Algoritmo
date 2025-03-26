@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada no parque</title>
+</head>
+<body>
+
+    Informe o tamanho da tela do celular:
+    <input type="number" id="inp_tamanho">
+
+    <br> <br>
+
+    Qual a cor do celular? 
+    <select id="slc_cor">
+        <option disabled selected value="#">Inseria um valor</option>
+        <option value="1">Preto</option>
+        <option value="2">Prata</option>
+        <option value="3">Azul</option>
+        <option value="4">Vemelho</option>
+    </select>
+
+    <br> <br>
+
+    <button onclick="validar()">Será que ele gosta?</button>
+
+    <img id="img_emocao">
+</body>
+</html>
+
+<script>
+    function validar() {
+        var tamanho = Number (inp_tamanho.value);
+        var cor = slc_cor.value;
+
+        if (tamanho >= 6.5 && (cor == "1" || cor == "2")) {
+            img_emocao.src = `https://media.istockphoto.com/id/1494508936/pt/foto/happy-excited-and-phone-with-black-woman-in-studio-for-text-message-notification-and-social.jpg?s=612x612&w=0&k=20&c=Q9yuKa8TN7dO3frZFNww-UJuxYZO089i4o4I_P8zm_8=`;
+        } else {
+           img_emocao.src = `https://static.vecteezy.com/ti/vetor-gratis/p1/3025790-deprimido-triste-homem-falencia-perda-crise-problema-conceito-vetor.jpg`;
+        }
+    }
+</script>

@@ -42,18 +42,16 @@
         var nome = inp_nome.value;
         var alto_piloto = Number(inp_altura_piloto.value);
 
-        if (alto_inicio  > 1 && alto_inicio < alto_final) {
-
-            if (alto_piloto >= alto_inicio && alto_piloto <= alto_final) {
-                    div_msg.innerHTML += `O candidato ${nome}, com altura de ${alto_piloto} metros, participará do processo de seleção de piloto.<br>`;
-
-                } else {
-                    div_msg.innerHTML += `Infelizmente, o candidato ${nome}, com altura de ${alto_piloto} metros, não atende os requisitos da seleção.<br>`;
-                }
+        if (alto_inicio  <= 1 || alto_inicio <= alto_final) {
+            alert("Intervalo da altura de seleção é inválido! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial.");
+           
+        } else if (alto_piloto < alto_inicio || alto_piloto > alto_final) {
+                div_msg.innerHTML += `Infelizmente, o candidato ${nome}, com altura de ${alto_piloto} metros, não atende os requisitos da seleção.<br>`;
 
             } else {
-                alert("Intervalo da altura de seleção é inválido! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial.");
-            }
+                    div_msg.innerHTML += `O candidato ${nome}, com altura de ${alto_piloto} metros, participará do processo de seleção de piloto.<br>`;
+                            
+        }
         
     }
 </script>
