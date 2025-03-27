@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira uma frase da sua preferencia:
+    <input type="text" id="inp_frase">
+
+    <br>
+
+    <button onclick="contar()">Diga algo sobre a matéria de Algoritmos</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function contar() {
+        var cont = 0;
+        var texto = inp_frase.value;
+
+        while (cont < 7) {
+            cont ++;
+
+            div_msg.innerHTML += `${cont}. ${texto} <br>`;
+        }
+    }
+</script>
