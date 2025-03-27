@@ -3,51 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrada no parque</title>
+    <title>Exercicio 4</title>
 </head>
 <body>
 
-    Nome:
-    <input type="text" id="inp_nome" placeholder="Ex: Samuel Andrade">
+    Informe o login:
+    <input type="text" id="inp_login">
 
     <br> <br>
 
-    Altura (em metros):
-    <input type="number" id="inp_altura" placeholder="Ex: 1.80">
+    Informe a senha:
+    <input type="password" id="inp_senha">
     
     <br> <br>
 
-    Idade:
-    <input type="number" id="inp_idade" placeholder="Ex: 18">
+    Informe uma informação pessoal:
+    <input type="text" id="inp_pessoal">
 
     <br> <br>
 
-    Está acompanhado? Por quem?
-    <select id="slc_acompanhado">
-        <option disabled selected value="#">Inseria um valor</option>
-        <option value="1">Sim</option>
-        <option value="2">Não</option>
-    </select>
-
     <br> <br>
 
-    <button onclick="validar()">Pode entrar no parque?</button>
+    <button onclick="autenticar()">Autenticar</button>
 
     <div id="div_msg"></div>
 </body>
 </html>
 
 <script>
-    function validar() {
-        var nome = inp_nome.value;
-        var altura = Number (inp_altura.value);
-        var idade = Number (inp_idade.value);
-        var acompanhado = slc_acompanhado.value;
+    function autenticar() {
+        var login = inp_login.value;
+        var senha = inp_senha.value;
+        var pessoal = inp_pessoal.value;
 
-        if (altura >= 1.5 && (idade >= 18 || acompanhado == "1")) {
-            div_msg.innerHTML = `Pode entrar`;
+        if (login == "ana" && senha == "braga" && (pessoal == "1949" || pessoal == "louro josé")) {
+            div_msg.innerHTML = `Usuário autenticado`;
         } else {
-            div_msg.innerHTML = `Não pode entrar`;
+            div_msg.innerHTML = `Falha na autenticação`;
         }
     }
 </script>
