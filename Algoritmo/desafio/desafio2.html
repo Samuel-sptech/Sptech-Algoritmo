@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria Gourmet</title>
+</head>
+
+<body>
+
+    <h1>Doceria da dona Dori Valdossin</h1>
+
+    <hr>
+    <div>
+
+        <b>Macarrons:</b>
+        <br>
+        Insira a quantidade de cada doce vendido: <br>
+        <input type="number" id="inp_qtdDoce_Macarrons">
+        <br>
+        Preço da unidade: <br>
+        <input type="number" id="inp_preco_Macarrons">
+
+        <hr>
+    </div>
+
+    <div>
+        <b>Brigadeiros:</b>
+        <br>
+        Insira a quantidade de cada doce vendido: <br>
+        <input type="number" id="inp_qtdDoce_Brigadeiros">
+        <br>
+        Preço da unidade: <br>
+        <input type="number" id="inp_preco_Brigadeiros">
+
+        <hr>
+    </div>
+
+    <div>
+        <b>Cupcakes:</b>
+        <br>
+        Insira a quantidade de cada doce vendido: <br>
+        <input type="number" id="inp_qtdDoce_Cupcakes">
+        <br>
+        Preço da unidade: <br>
+        <input type="number" id="inp_preco_Cupcakes">
+
+        <hr>
+    </div>
+
+    <div>
+        <b>Cheesecakes:</b>
+        <br>
+        Insira a quantidade de cada doce vendido: <br>
+        <input type="number" id="inp_qtdDoce_Cheesecakes">
+        <br>
+        Preço da unidade: <br>
+        <input type="number" id="inp_preco_Cheesecakes">
+
+        <hr>
+    </div>
+
+    <button onclick="verificar()">Verificar Vendas</button>
+
+    <br></br>
+
+    <div id="div_msg"></div>
+
+  
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+        var qtdMacarrons = Number(inp_qtdDoce_Macarrons.value);
+        var precoMa = Number(inp_preco_Macarrons.value);
+
+        var qtdBrigadeiro = Number(inp_qtdDoce_Brigadeiros.value);
+        var precoBri = Number(inp_preco_Brigadeiros.value);
+
+        var qtdCupcake = Number(inp_qtdDoce_Cupcakes.value);
+        var precoCup = Number(inp_preco_Cupcakes.value);
+
+        var qtdCheesecake = Number(inp_qtdDoce_Cheesecakes.value);
+        var precoChe = Number(inp_preco_Cheesecakes.value);
+
+        var msg = '';
+
+        if (qtdMacarrons < 0 || precoMa < 0 || qtdBrigadeiro < 0 || precoBri < 0 || qtdCupcake < 0 || precoCup < 0 || qtdCheesecake < 0 || precoChe < 0) {
+            alert(`Os valores devem ser pelo menos 0`);
+
+        } else {
+            var cont = 0;            
+            var qtdTotal = qtdMacarrons; 
+            var precoTotal = precoMa + precoBri + precoCup + precoChe;
+
+            while (cont < qtdTotal) {
+                cont++;
+
+                msg += `Venda ${cont} - <img src="https://t3.ftcdn.net/jpg/02/12/94/42/360_F_212944246_CRFBgJBAIA3KYCLOievQzyRwwXjGBeEE.jpg" height="100px" width="100px"> - R$${precoMa} <br><br>`;
+            }
+
+            qtdTotal += qtdBrigadeiro;
+
+            while (cont < qtdTotal) {
+                cont++;
+
+                msg += `Venda ${cont} - <img src="https://media.istockphoto.com/id/1146488913/pt/foto/sweet-chocolate-brigadeiro-on-wooden-background.jpg?s=612x612&w=0&k=20&c=cuoSREzToHEIVGqpFkduqF7z7vYAwUg5JRnWdvP_fv8=" height="100px" width="100px"> - R$${precoBri} <br><br>`;
+            }
+
+            qtdTotal += qtdCupcake;
+            
+            while (cont < qtdTotal) {
+                cont++;
+
+                msg += `Venda ${cont} - <img src="https://imag.bonviveur.com/cupcakes.jpg" height="100px" width="100px"> - R$${precoCup} <br><br>`;
+            }
+
+            qtdTotal += qtdCheesecake;
+            
+            while (cont < qtdTotal) {
+                cont++;
+
+                msg += `Venda ${cont} - <img src="https://oficinadeinverno.com.br/cdn/shop/articles/gluten-free-new-york-cheesecake-1450985-hero-01-dc54f9daf38044238b495c7cefc191fa.jpg?v=1659309704" height="100px" width="100px">  - R$${precoChe} <br><br>`;
+            }
+
+            msg += `Com a quantidade de ${qtdMacarrons} Macarons, ${qtdBrigadeiro} Brigadeiros, ${qtdCupcake} Cupcakes e ${qtdCheesecake} Cheesecakes, a venda totalizará  R$${precoTotal}`;
+
+            div_msg.innerHTML = msg;
+        }
+    }
+</script>

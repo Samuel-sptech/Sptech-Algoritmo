@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Insira um número:
+    <input type="text" id="inp_num">
+
+    <br></br>
+
+    Insira uma frase:
+    <input type="text" id="inp_frase">
+
+    <br> <br>
+
+    <button onclick="contar()">Diga algo sobre a matéria de Algoritmos</button>
+
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var cont = 1;
+        var num = Number(inp_num.value);
+        var texto = inp_frase.value;
+        var msg = "";
+
+        while (cont <= num) {
+            cont++;
+
+            msg += `${texto} \n`;
+        }
+
+        cont = 0;
+
+        while (cont < num) {
+            cont++;
+            alert(msg);
+        }
+    }
+</script>

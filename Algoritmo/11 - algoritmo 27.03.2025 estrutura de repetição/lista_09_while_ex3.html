@@ -22,11 +22,14 @@
     function contar() {
         var cont = 0;
         var texto = inp_frase.value;
+        var msg = "";
 
         while (cont < 7) {
             cont ++;
 
-            div_msg.innerHTML += `${cont}. ${texto} <br>`;
+            msg += `${cont}. ${texto} <br>`;
         }
+
+        div_msg.innerHTML = msg;
     }
 </script>

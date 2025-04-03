@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 4</title>
 </head>
+
 <body>
 
     Informe o login:
@@ -14,7 +16,7 @@
 
     Informe a senha:
     <input type="password" id="inp_senha">
-    
+
     <br> <br>
 
     Informe uma informação pessoal:
@@ -22,24 +24,34 @@
 
     <br> <br>
 
-    <br> <br>
-
     <button onclick="autenticar()">Autenticar</button>
 
     <div id="div_msg"></div>
 </body>
+
 </html>
 
 <script>
+    var cont = 3;
+
     function autenticar() {
         var login = inp_login.value;
         var senha = inp_senha.value;
         var pessoal = inp_pessoal.value;
 
-        if (login == "ana" && senha == "braga" && (pessoal == "1949" || pessoal == "louro josé")) {
+        if (login == "ana" && senha == "braga" && (pessoal == "1949" || pessoal == "louro josé") && cont > 0) {
             div_msg.innerHTML = `Usuário autenticado`;
+
+            cont = 3;
+        } else if (cont == 0) {
+            div_msg.innerHTML = `<div>Usuário BLOQUEADO! Procure seu gerente!</div>`;
+
         } else {
-            div_msg.innerHTML = `Falha na autenticação`;
+            cont = cont - 1;
+
+            div_msg.innerHTML = `Falha na autenticação <br>`;
+
+            div_msg.innerHTML += `Você ainda tem ${cont} tentativa(s) `;
         }
     }
 </script>

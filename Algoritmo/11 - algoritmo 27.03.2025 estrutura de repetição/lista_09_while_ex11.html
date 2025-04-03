@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Selecione o número:
+    <select id="slc_num">
+        <option selected disabled value="#">Insira um valor</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+    </select>
+
+    <br></br>
+
+    Insira uma numero:
+    <input type="text" id="inp_num">
+
+    <br> <br>
+
+    <button onclick="contar()">Ver Tabuada</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var cont = 0;
+        var num = Number(inp_num.value);
+        var tabuada = slc_num.value;
+        var msg = "";
+
+        while (cont < tabuada) {
+            cont++;
+
+            var resto = cont % 2;
+            var result = num * cont;
+
+            if (resto == 0) {
+                msg += `<span style="color: blue"> ${num} x ${cont} = ${result}</span> <br>`;
+            } else {
+                msg += `<span style="color: red"> ${num} x ${cont} = ${result} </span><br>`;
+            }
+        }
+
+        div_msg.innerHTML = msg;
+
+    }
+</script>

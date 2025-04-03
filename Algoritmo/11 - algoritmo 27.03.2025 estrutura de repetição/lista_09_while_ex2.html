@@ -15,12 +15,15 @@
 <script>
     function contar() {
         var cont = 0;
-        var texto = "erro 007: clique no botão";
+        var texto = "erro 007: var indefinido";
+        var msg = '';
 
         while (cont < 7) {
             cont ++;
 
-            div_msg.innerHTML += `${texto} <br>`;
+            msg += `${texto} <br>`;
         }
+
+        div_msg.innerHTML = msg
     }
 </script>

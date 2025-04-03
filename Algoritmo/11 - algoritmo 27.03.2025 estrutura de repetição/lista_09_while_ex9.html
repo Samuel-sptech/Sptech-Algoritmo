@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     insira um intervalo crescente:
-    <input type="number" name="" id="">
-    <button onclick="contar()">Diga algo sobre a matéria de Algoritmos</button>
+    <input type="number" id="inp_intervalo">
+
+    <br></br>
+
+    <button onclick="contar()">S2 Pares</button>
 
     <div id="div_msg"></div>
 </body>
+
 </html>
 
 <script>
     function contar() {
         var cont = 0;
-        var texto = "erro 007: clique no botão";
+        var inter = Number(inp_intervalo.value);
+        var resto = 0;
+        var msg = "";
 
-        while (cont < 7) {
-            cont ++;
+        while (cont < inter) {
+            cont++;
+            resto = cont % 2;
 
-            div_msg.innerHTML += `${texto}, `;
+            if (resto == 0) {
+                msg += `${cont} <br>`; 
+            }
+
         }
+
+        div_msg.innerHTML = msg;
     }
 </script>

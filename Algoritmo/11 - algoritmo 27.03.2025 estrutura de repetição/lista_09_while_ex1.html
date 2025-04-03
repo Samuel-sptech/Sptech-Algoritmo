@@ -15,11 +15,13 @@
 <script>
     function contar() {
         var cont = 0;
-
+        var msg = '';
         while (cont < 15) {
             cont ++
 
-            div_msg.innerHTML += `${cont}, `;
+            msg += `${cont} <br> `;
         }
+
+        div_msg.innerHTML = msg;
     }
 </script>
