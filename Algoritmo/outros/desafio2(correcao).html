@@ -94,37 +94,23 @@
 
         } else {
             var cont = 0;
-            var qtdTotal = qtdMacarrons;
+            var qtdTotal = qtdMacarrons + qtdBrigadeiro + qtdCupcake + qtdCheesecake;
             var precoTotal = (qtdMacarrons * precoMa) + (qtdBrigadeiro * precoBri) + ( qtdCupcake * precoCup) + (qtdCheesecake * precoChe);
 
             while (cont < qtdTotal) {
                 cont++;
 
-                msg += `Venda ${cont} - <img src="https://t3.ftcdn.net/jpg/02/12/94/42/360_F_212944246_CRFBgJBAIA3KYCLOievQzyRwwXjGBeEE.jpg" height="100px" width="100px"> - R$${precoMa} <br><br>`;
-            }
+                if (cont <= qtdMacarrons) {
+                    msg += `Venda ${cont} - <img src="https://t3.ftcdn.net/jpg/02/12/94/42/360_F_212944246_CRFBgJBAIA3KYCLOievQzyRwwXjGBeEE.jpg" height="100px" width="100px"> - R$${precoMa} <br><br>`;
 
-            qtdTotal += qtdBrigadeiro;
+                } else if (cont <= (qtdBrigadeiro + qtdMacarrons)) {
+                    msg += `Venda ${cont} - <img src="https://media.istockphoto.com/id/1146488913/pt/foto/sweet-chocolate-brigadeiro-on-wooden-background.jpg?s=612x612&w=0&k=20&c=cuoSREzToHEIVGqpFkduqF7z7vYAwUg5JRnWdvP_fv8=" height="100px" width="100px"> - R$${precoBri} <br><br>`;
 
-            while (cont < qtdTotal) {
-                cont++;
+                } else if (cont <= (qtdCupcake + qtdBrigadeiro + qtdMacarrons)) {
+                    msg += `Venda ${cont} - <img src="https://imag.bonviveur.com/cupcakes.jpg" height="100px" width="100px"> - R$${precoCup} <br><br>`;
 
-                msg += `Venda ${cont} - <img src="https://media.istockphoto.com/id/1146488913/pt/foto/sweet-chocolate-brigadeiro-on-wooden-background.jpg?s=612x612&w=0&k=20&c=cuoSREzToHEIVGqpFkduqF7z7vYAwUg5JRnWdvP_fv8=" height="100px" width="100px"> - R$${precoBri} <br><br>`;
-            }
-
-            qtdTotal += qtdCupcake;
-
-            while (cont < qtdTotal) {
-                cont++;
-
-                msg += `Venda ${cont} - <img src="https://imag.bonviveur.com/cupcakes.jpg" height="100px" width="100px"> - R$${precoCup} <br><br>`;
-            }
-
-            qtdTotal += qtdCheesecake;
-
-            while (cont < qtdTotal) {
-                cont++;
-
-                msg += `Venda ${cont} - <img src="https://oficinadeinverno.com.br/cdn/shop/articles/gluten-free-new-york-cheesecake-1450985-hero-01-dc54f9daf38044238b495c7cefc191fa.jpg?v=1659309704" height="100px" width="100px">  - R$${precoChe} <br><br>`;
+                } else {msg += `Venda ${cont} - <img src="https://oficinadeinverno.com.br/cdn/shop/articles/gluten-free-new-york-cheesecake-1450985-hero-01-dc54f9daf38044238b495c7cefc191fa.jpg?v=1659309704" height="100px" width="100px">  - R$${precoChe} <br><br>`;
+                }
             }
 
             msg += `Com a quantidade de ${qtdMacarrons} Macarons, ${qtdBrigadeiro} Brigadeiros, ${qtdCupcake} Cupcakes e ${qtdCheesecake} Cheesecakes, a venda totalizará  R$${precoTotal}`;

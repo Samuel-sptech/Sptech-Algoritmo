@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Informe o quantidade de Elefantes:
+    <input type="number" id="inp_elefante">
+
+    <br><br>
+
+    <button onclick="contar()">Atazanar a médium</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function contar() {
+        var num = Number(inp_elefante.value);
+        var msgInicial = `1 elefante incomoda muita gente!`;
+        var msgCont = `incomodam, `;
+        var msg = ``;
+        var cont = 2;
+
+        while (cont <= num) {
+            msgCont += `incomodam, `;
+            
+            msg += ` <br> ${msgInicial} <br><br> ${cont} elefantes ${msgCont}  muito mais! <br>`; 
+            
+            cont++;
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

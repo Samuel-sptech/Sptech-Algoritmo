@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos em quantos dias o você faz musculação?
+    <input type="number" id="inp_qtdMusculacao">
+
+    <br></br>
+
+    <button onclick="contar()">Exibir rotina mensal</button>
+
+    <br>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function contar() {
+        var qtdMusculacao = Number(inp_qtdMusculacao.value);
+        var msgInicial = `Musculação`;
+        var msgCont = `Comer, dormir etc `;
+        var msg = ``;
+        var cont = 0;
+        
+        while (cont < 30) {
+            var resto = cont % qtdMusculacao;
+            
+            cont++;
+
+            if (resto == 1) {
+                
+                msg += `Dia ${cont} - ${msgInicial}  <br>  `;
+            } else {
+                msg += `Dia ${cont} - ${msgCont}  <br> `;
+            }
+
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

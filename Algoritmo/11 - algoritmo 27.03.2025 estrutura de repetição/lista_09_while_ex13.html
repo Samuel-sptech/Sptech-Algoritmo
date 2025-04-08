@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe um intervalo inicial: <br>
+    <input type="number" id="inp_intervalo1"> <br>
+
+    <br></br>
+
+    Informe um intervalo final: <br>
+    <input type="number" id="inp_intervalo2">
+    <br></br>
+
+    <button onclick="contar()">Curto 3 e 5!</button>
+
+    <br>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var inter1 = Number(inp_intervalo1.value);
+        var inter2 = Number(inp_intervalo2.value);
+
+        var msg = ``;
+
+        while (inter1 <= inter2) {
+            if (inter1 % 3 === 0 && inter1 % 5 === 0) {
+                msg += `${inter1} - É TRI!É PENTA!<br>`;
+            } else if (inter1 % 3 === 0) {
+                msg += `${inter1} - É TRI!<br>`;
+            } else if (inter1 % 5 === 0) {
+                msg += `${inter1} - É PENTA!<br>`;
+            } else {
+                msg += inter1 + "<br>";
+            }
+            inter1++;
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

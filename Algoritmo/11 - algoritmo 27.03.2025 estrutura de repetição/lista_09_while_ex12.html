@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a pessoa que você ama:
+    <input type="text" id="inp_idolo">
+
+    <br></br>
+
+    Quanto você ama ela:
+    <input type="text" id="inp_qtdAmar">
+
+    <br></br>
+
+    <button onclick="contar()">Expressar amor</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function contar() {
+        var idolo = inp_idolo.value;
+        var qtdAmar = Number(inp_qtdAmar.value);
+        var cont = 0;
+        var msg = "";
+
+        while (cont < qtdAmar) {
+            cont++;
+
+            msg += `${cont}. ${idolo}, eu te amo! Sempre lembre disso! <br>`;
+
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>
