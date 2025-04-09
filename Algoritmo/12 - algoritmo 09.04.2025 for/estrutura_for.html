@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    LINHAS:
+    <input type="number" id="inp_linha">
+    <br> <br>
+    CARACTERES:
+    <input type="number" id="inp_caracteres">
+    <br>
+    <button onclick="contar()">contar</button>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+
+    // cont = 0
+    /*
+    function contar() {
+        var cont = 0; //variavél de controle
+        var msg = ``;
+
+        while (cont < 10) { //condição de repetição 
+            cont++; //incremento 
+            msg += `${cont} <br>`;
+        }
+
+        div_msg.innerHTML = msg;
+    }
+    */
+
+    // cont = 1
+    /*
+    function contar() {
+        var cont = 1;
+        var msg = ``;
+
+        while (cont <= 10) {
+            msg += `${cont} <br>`;
+            cont++;
+        }
+
+        div_msg.innerHTML = msg;
+    }
+    */
+
+    //for
+
+    // function contar() {
+    //     var msg = ``;
+
+    //     //for (var cont = 1;  /*variavél de controle ou qualquer outro comando*/
+    //     //    cont <= 10;     /*condição de repetição*/  
+    //     //    cont ++         /*incremento ou qualquer outro comando*/) {
+    //     //    msg += `${cont} <br>`;
+    //     //}
+
+    //     for(var cont = 1; cont <= 10; cont++){
+    //         msg += `${cont} <br>`;
+    //     }
+
+    //     div_msg.innerHTML = msg;
+    // }
+
+
+    function contar() {
+        var msg = ``;
+        var qtdLinhas = Number(inp_linha.value);
+        var qtdColunas = Number(inp_caracteres.value);
+
+        for (var linha = 1; linha <= qtdLinhas; linha++) {
+            var frase = ``;
+
+                for (var coluna = 1; coluna <= qtdColunas; coluna++)
+                    frase += `${linha}`;
+
+            msg += `${frase} <br>`;
+
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

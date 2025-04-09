@@ -24,21 +24,25 @@
         var qtdMusculacao = Number(inp_qtdMusculacao.value);
         var msgInicial = `Musculação`;
         var msgCont = `Comer, dormir etc `;
-        var msg = ``;
+        var msg = `Dia 1 - Musculação <br>`;
         var cont = 1;
+        var contDias = 0;
         var resto = 0;
         
-        while (cont <= 30) {
-            resto = cont % qtdMusculacao;
+        while (cont < 30) {
+            cont++;
+            contDias++;
 
-            if (resto == 1) {
-                msg += ` <br> Dia ${cont} - ${msgInicial}  <br>  `;
+            if (contDias < qtdMusculacao) {
+                msg += `Dia ${cont} - ${msgCont}  <br>  `;
+                
             } else {
-                msg += `Dia ${cont} - ${msgCont}  <br> `;
+                msg += `Dia ${cont} - ${msgInicial}  <br> `;
+                contDias = 0;
             }
             
-            cont++;
         }
+
         div_msg.innerHTML = msg;
     }
 </script>
