@@ -27,22 +27,16 @@
 
 <script>
     function contar() {
-        var cont = 1;
         var num = Number(inp_num.value);
         var texto = inp_frase.value;
         var msg = "";
 
-        while (cont <= num) {
-            cont++;
-
+        for (var cont = 1; cont <= num; cont++) {
             msg += `${texto} \n`;
         }
 
-        cont = 0;
-
-        while (cont < num) {
-            cont++;
-            alert(cont + ". \n" + msg);
+        for (cont = 1; cont <= num; cont++) {
+            alert(`${msg}`);
         }
     }
 </script>

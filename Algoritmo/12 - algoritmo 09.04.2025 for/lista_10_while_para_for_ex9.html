@@ -31,14 +31,12 @@
         var resto = 0;
         var msg = "";
 
-        while (menor <= maior) {
-            menor++;
-            resto = menor % 2;
+        for (var cont = menor; cont <= maior; cont++) {
+            resto = cont % 2;
 
             if (resto == 0) {
-                msg += `${menor} <br>`;
+                msg += `${cont} <br>`;
             }
-
         }
 
         div_msg.innerHTML = msg;

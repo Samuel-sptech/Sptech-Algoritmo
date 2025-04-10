@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="exibir()">Números Cabalísticos</button>
+    <br>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        var msg = '';
+
+        for(var cont = 1; cont <= 30; cont++){
+            if (cont != 3 && cont != 4 && cont != 7 && cont != 10 && cont != 12) {
+                    msg += `${cont} <br>`;
+                } 
+        }
+        
+        div_msg.innerHTML = msg;
+    }
+</script>

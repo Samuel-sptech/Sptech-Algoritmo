@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="contar()">Contar</button>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    // function contar() {
+    //     div_msg.innerHTML+=`<br> INICIANDO CONTAGEM! <br>`;
+
+    //     for(cont = 1; cont <= 10; cont++){
+    //         var resp = prompt(`${cont}. Deseja continuar?`);
+
+    //         if (resp == "s") {
+    //             div_msg.innerHTML += `${cont} <br>`;
+    //         } else {
+    //             cont = 10;
+    //         }
+    //     }
+    // }
+
+    // function contar() {
+    //     div_msg.innerHTML+=`<br> INICIANDO CONTAGEM! <br>`;
+
+    //     var resp = prompt(`Deseja iniciar a contagem?`);
+
+    //     for(cont = 1; resp == "s" && cont <= 10; cont++){
+
+    //         resp = prompt(`${cont}. Deseja continuar?`);
+
+    //         div_msg.innerHTML += `${cont} <br>`;
+
+    //         }
+    //     }
+
+
+    function contar() {
+        div_msg.innerHTML += `<br> INICIANDO CONTAGEM! <br>`;
+
+        var resp = confirm(`Deseja iniciar a contagem?`);
+
+        for (cont = 1; resp && cont <= 10; cont++) {
+
+            resp = confirm(`${cont}. Deseja continuar?`);
+
+            div_msg.innerHTML += `${cont} <br>`;
+
+        }
+        
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <b>Exercício 7 </b>
+
+    <hr>
+
+    Informe um número:
+    <input type="number" id="inp_numero">
+
+    <br></br>
+
+    <button onclick="calcular()">Viva o 7!</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var num = Number(inp_numero.value);
+        msg = ``;
+
+        if (num >= 0 && num <= 200) {
+            for (var cont = 1; cont <= num; cont++) {
+                var resto = cont % 7;
+
+                if (resto == 0) {
+                    msg += `${cont} <br>`;
+                }
+
+            }
+        } else {
+            alert(`Insira um numero entre 0 e 200`);
+        }
+
+        div_msg.innerHTML += msg;
+        div_msg.innerHTML += num;
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <b>Exercício 6 </b>
+
+    <hr>
+
+    Informe um número:
+    <input type="number" id="inp_numero">
+
+    <br></br>
+
+    <button onclick="calcular()">Adoro múltiplos de 5</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var num = Number(inp_numero.value);
+        msg = ``;
+
+        if (num >= 20 && num <= 100) {
+            for (var cont = 1; cont <= num; cont++) {
+                var resto = cont % 5;
+
+                if (resto == 0) {
+                    msg += `${cont} <br>`;
+                }
+            }
+            
+        } else {
+            alert(`Insira um numero entre 20 e 100`);
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>
