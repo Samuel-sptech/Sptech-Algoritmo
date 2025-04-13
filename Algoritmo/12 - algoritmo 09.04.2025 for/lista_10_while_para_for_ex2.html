@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <b>Exercício 2 </b>
+
+    <hr>
     <button onclick="contar()">Diga algo sobre a matéria de Algoritmos</button>
 
     <div id="div_msg"></div>
@@ -14,13 +18,13 @@
 
 <script>
     function contar() {
-        var cont = 0;
         var texto = "erro 007: var indefinido";
         var msg = '';
 
-        for(var cont = 1; cont < 7; cont ++){
-            msg += `${texto} <br>`;
+        for(var cont = 1; cont <= 7; cont++){
+            msg += `${texto} <br> `;
         }
+
         div_msg.innerHTML = msg
     }
 </script>

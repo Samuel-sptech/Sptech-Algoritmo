@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <b>Exercício 4 </b>
+
+    <hr>
     <button onclick="contar()">S2 Pares</button>
 
     <div id="div_msg"></div>
@@ -18,9 +21,10 @@
 <script>
     function contar() {
         var msg = "";
+        var resto = 0;
 
-        for(var cont = 1; cont <= 100; cont++){
-            var resto = cont % 2;
+        for( var cont = 1; cont <= 100; cont++){
+            resto = cont % 2;
                 if (resto == 0) {
                     msg += `${cont} <br> `;
 

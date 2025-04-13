@@ -39,20 +39,23 @@
 
 <script>
     function contar() {
-        
         var num = Number(inp_num.value);
         var tabuada = slc_num.value;
         var msg = "";
+        var resto = 0;
+        var result = 0;
+ 
 
         for(var cont = 1; cont <= tabuada; cont++){
-            var resto = cont % 2;
-            var result = num * cont;
-
+            resto = cont % 2;
+            result = num * cont;
+            
             if (resto == 0) {
                 msg += `<span style="color: blue"> ${num} x ${cont} = ${result}</span> <br>`;
             } else {
                 msg += `<span style="color: red"> ${num} x ${cont} = ${result} </span><br>`;
             }
+
         }
 
         div_msg.innerHTML = msg;

@@ -8,15 +8,16 @@
 </head>
 
 <body>
-    Insira um intervalo mínimo:
-    <input type="number" id="inp_intervalom">
+
+    insira o mínimo:
+    <input type="number" id="inp_min">
+
+    <br></br>
+    insira o máximo:
+    <input type="number" id="inp_max">
 
     <br></br>
 
-    Insira um intervalo máximo:
-    <input type="number" id="inp_intervaloM">
-
-    <br></br>
     <button onclick="contar()">S2 Pares</button>
 
     <div id="div_msg"></div>
@@ -26,17 +27,17 @@
 
 <script>
     function contar() {
-        var menor = Number(inp_intervalom.value);
-        var maior = Number(inp_intervaloM.value);
+        var min = Number(inp_min.value);
+        var max = Number(inp_max.value);
         var resto = 0;
         var msg = "";
 
-        while (menor <= maior) {
-            menor++;
-            resto = menor % 2;
+        while (min < max) {
+            min++;
+            resto = min % 2;
 
             if (resto == 0) {
-                msg += `${menor} <br>`;
+                msg += `${min} <br>`; 
             }
 
         }

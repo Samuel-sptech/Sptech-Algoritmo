@@ -30,21 +30,23 @@
     function calcular() {
         var num = Number(inp_numero.value);
         msg = ``;
+        
 
         if (num >= 0 && num <= 200) {
-            for (var cont = 1; cont <= num; cont++) {
-                var resto = cont % 7;
+            var resto = 0;
+
+            for(var cont = 1; cont <= num; cont++){
+                resto = cont % 7;
 
                 if (resto == 0) {
                     msg += `${cont} <br>`;
                 }
-
             }
         } else {
             alert(`Insira um numero entre 0 e 200`);
         }
 
         div_msg.innerHTML += msg;
-        div_msg.innerHTML += num;
+        div_msg.innerHTML += `O número escolhido foi: ${num} <br>`;
     }
 </script>

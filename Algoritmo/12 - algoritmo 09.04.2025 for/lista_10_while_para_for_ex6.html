@@ -30,16 +30,17 @@
     function calcular() {
         var num = Number(inp_numero.value);
         msg = ``;
+        var resto = 0;
 
         if (num >= 20 && num <= 100) {
-            for (var cont = 1; cont <= num; cont++) {
-                var resto = cont % 5;
+            for(var cont = 1; cont <= num; cont++){
+
+                resto = cont % 5;
 
                 if (resto == 0) {
                     msg += `${cont} <br>`;
                 }
             }
-            
         } else {
             alert(`Insira um numero entre 20 e 100`);
         }

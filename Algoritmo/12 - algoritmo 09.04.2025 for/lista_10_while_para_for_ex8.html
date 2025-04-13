@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <b>Exercício 8 </b>
+
+    <hr>
 
     Insira um número:
     <input type="text" id="inp_num">
@@ -31,12 +34,12 @@
         var texto = inp_frase.value;
         var msg = "";
 
-        for (var cont = 1; cont <= num; cont++) {
+        for(var cont = 1; cont <= num; cont++){
             msg += `${texto} \n`;
         }
 
-        for (cont = 1; cont <= num; cont++) {
-            alert(`${msg}`);
+        for(cont = 1; cont < num; cont++){
+            alert(msg);
         }
     }
 </script>
