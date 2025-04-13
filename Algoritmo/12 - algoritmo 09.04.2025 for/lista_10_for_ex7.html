@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira quantos depósitos você fez no banco:
+    <input type="number" id="inp_qtdDeposito">
+
+    <br>
+
+    Insira o valor dos depósitos feito:
+    <input type="number" id="inp_valor">
+    <br>
+
+    <button onclick="contar()">Acompanhar grana</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function contar() {
+        var deposito = Number(inp_qtdDeposito.value);
+        var valor = Number(inp_valor.value);
+        var total = 0;
+        var msg = "";
+
+        for(var cont = 1; cont <= deposito; cont++){
+            total += valor;
+
+            if (cont % 3 == 0) {       
+            total = total * 1.01;         
+            msg += `${cont}º Mês: R$${total}<br>`;
+
+            } else {
+            msg += `${cont}º Mês: R$${total}<br>`;
+                
+            }
+
+        }
+
+        msg += `<br> Total guardado: R$${total}`;
+        div_msg.innerHTML = msg;
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Quantas pessoas vão entrar no carro?
+    <input type="text" id="inp_qtdPessoa">
+
+    <br>
+
+    
+    Quantas pessoas o carro aguenta?
+    <input type="text" id="inp_maxCarro">
+
+    <br>
+
+    <button onclick="contar()">#Partiu Carona</button>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var qtdPessoa = Number(inp_qtdPessoa.value);
+        var maxCarro = Number(inp_maxCarro.value);
+        var msg = "Entrou o 1º passageiro (que é o(a) motorista) <br>";
+
+        for (cont = 2; cont <= qtdPessoa; cont++) {
+            
+            if (cont > maxCarro) {
+                msg += `O ${cont}º passageiro terá que esperar! <br>`;
+            } else {
+                msg += `Entrou o ${cont}º passageiro <br>`;
+            }
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

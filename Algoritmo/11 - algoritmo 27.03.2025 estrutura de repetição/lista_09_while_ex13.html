@@ -11,11 +11,11 @@
     Informe um intervalo inicial: <br>
     <input type="number" id="inp_intervalo1"> <br>
 
-    <br></br>
+    <br><br>
 
     Informe um intervalo final: <br>
     <input type="number" id="inp_intervalo2">
-    <br></br>
+    <br><br>
 
     <button onclick="contar()">Curto 3 e 5!</button>
 
@@ -34,11 +34,11 @@
         var msg = ``;
 
         while (inter1 <= inter2) {
-            if (inter1 % 3 === 0 && inter1 % 5 === 0) {
+            if (inter1 % 3 == 0 && inter1 % 5 == 0) {
                 msg += `${inter1} - É TRI!É PENTA!<br>`;
-            } else if (inter1 % 3 === 0) {
+            } else if (inter1 % 3 == 0) {
                 msg += `${inter1} - É TRI!<br>`;
-            } else if (inter1 % 5 === 0) {
+            } else if (inter1 % 5 == 0) {
                 msg += `${inter1} - É PENTA!<br>`;
             } else {
                 msg += inter1 + "<br>";

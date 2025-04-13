@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira quantas xícaras de café com leite você já tomou na vida: 
+    <input type="number" id="inp_coca">
+
+    <br>
+
+    <button onclick="contar()">Ver a quantidade</button>
+    <br>
+
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+
+<script>
+    function contar() {
+        var refri = Number(inp_coca.value);
+        var msg = "";
+
+        for(var cont = 1; cont <= refri; cont++){
+            msg += `<img src="https://img.freepik.com/fotos-premium/leite-em-po-na-colher-com-lata-e-mamadeira-leite-na-tigela-na-mesa-de-madeira_73523-1403.jpg?w=360" style="height: 100px; width: 100px;">
+            
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfWF4-LjFLsjvY7nRQZoAq9H-jzGFHHmM39xLBmu6B5rGIzrER1rEFcu-vNMvz0MnqBZ0gluHXoYAeK_xOinLlazsvPP99fM1D1gt-awD1_mfAEo5BYi5krMTknROMZ-yT13alInTfYn_BnyS2fhYiBjEUmCIOf-IE4xYc7xShVFd2toFIlGyqfGMbGG8t/s16000-rw/Colher%20de%20caf%C3%A9.jpg" style="height: 100px; width: 100px;">
+            
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfWF4-LjFLsjvY7nRQZoAq9H-jzGFHHmM39xLBmu6B5rGIzrER1rEFcu-vNMvz0MnqBZ0gluHXoYAeK_xOinLlazsvPP99fM1D1gt-awD1_mfAEo5BYi5krMTknROMZ-yT13alInTfYn_BnyS2fhYiBjEUmCIOf-IE4xYc7xShVFd2toFIlGyqfGMbGG8t/s16000-rw/Colher%20de%20caf%C3%A9.jpg" style="height: 100px; width: 100px;"> <br>`;
+
+
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira quantas "Coca-Cola" acha que já bebeu na vida: 
+    <input type="number" id="inp_coca">
+
+    <br>
+
+    <button onclick="contar()">Ver a quantidade</button>
+    <br>
+
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+
+<script>
+    function contar() {
+        var refri = Number(inp_coca.value);
+        var msg = "";
+
+        for(var cont = 1; cont <= refri; cont++){
+            msg += `<img src="https://zaffari.vtexassets.com/arquivos/ids/269752/1007841-00.jpg?v=638745538297700000 " style="height: 100px; width: 100px;">`;
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

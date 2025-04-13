@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="contar()">FizzBuzz</button>
+
+    <br>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var msg = ``;
+
+        for(var cont = 1; cont <= 100; cont++){
+            if (cont % 3 == 0 && cont % 5 == 0) {
+                msg += `FizzBuzz<br>`;
+            } else if (cont % 3 == 0) {
+                msg += `Fizz<br>`;
+            } else if (cont % 5 == 0) {
+                msg += `Buzz<br>`;
+            } else {
+                msg += `${cont} <br>`;
+            }
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>
