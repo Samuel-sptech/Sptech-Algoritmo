@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Min: 
+    <input type="number" id="inp_min"> <br>
+    Max:
+    <input type="number" id="inp_max"> <br>
+
+
+
+    <button onclick="gerar()">Gerar Aleatório</button>
+
+    <br>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script> //NÚMEROS PSEUDOALEATÓRIOS
+    // function gerar() {
+    //     var max = Number(inp_max.value);
+    //     var min = Number(inp_min.value);
+    //     var intervalo = max - min
+    //     var aleatorio = Math.random(); // retorna um número aleatório entre 0 e 1
+    //     // aleatorio*=10; // manipular o máximo
+    //     // aleatorio*=10+10; // manipular o mínimo junto com o maximo
+    //     aleatorio = aleatorio*intervalo + min;
+    //     // quando utilizamos tofixed() ou qualquer valor que arredonde o valor, Diminui a probabilidade de cair nas estremidades 
+    //     div_msg.innerHTML = aleatorio;
+    // }
+
+    function gerar() {
+        var msg = ``;
+
+        var aleatorio = Math.random(); // retorna um número aleatório entre 0 e 1
+        
+        var max = Number(inp_max.value);
+        var min = Number(inp_min.value);
+        
+        var ate_10 = aleatorio * 10;
+        var ate_max = aleatorio * max; 
+        var intervalo = max - min;
+    
+        var min_max = aleatorio * intervalo + min;
+        var min_max_para_floor_ou_parseInt = aleatorio * (intervalo+1) + min;
+
+        msg += `Número sorteado: ${aleatorio} <br>
+        Número sorteado: ${aleatorio.toFixed()} <br>
+        Número até 10: ${ate_10} <br>
+        Número até o Máximo: ${ate_max} <br>
+        Número entre intervalo solicitado ${min_max} <br>
+        Número entre intervalo solicitado inteiro com toFixed ${min_max.toFixed()} <br>
+        Número entre intervalo solicitado inteiro com Math.floor ${Math.floor(min_max_para_floor_ou_parseInt)} <br>
+        Número entre intervalo solicitado inteiro com parseInt ${parseInt(min_max_para_floor_ou_parseInt)} <br>`;
+
+        div_msg.innerHTML = msg;
+    }
+</script>

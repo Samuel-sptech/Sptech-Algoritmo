@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#div_container{
+    height: 100px; 
+    width: 100px; 
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_msg{
+    color: white; 
+}
+</style>
+
+<body>
+    <button onclick="gerar()">jogar dado</button>
+    <br> <br>
+
+    <div id="div_container">
+        <div id="div_msg"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function gerar() {
+        var msg = ``;
+        var random = Math.random();
+
+        random = random * 20 + 1;
+
+        random = parseInt(random);
+        div_msg.innerHTML = random;
+    }
+</script>

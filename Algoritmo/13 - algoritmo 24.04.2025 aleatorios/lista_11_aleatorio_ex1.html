@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="gerar()">Sortear</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+    function gerar() {
+        var msg = ``;
+
+        var aleatorio = Math.random();
+        var aleatorio_arredondado = aleatorio.toFixed();
+
+        msg += aleatorio;
+
+        if (aleatorio_arredondado == 1) {
+            msg += `<br> Eu arredondaria para 1`;
+        } else {
+            msg += `<br> Eu arredondaria para 0`;
+        }
+
+        div_msg.innerHTML = msg;
+    }
+</script>

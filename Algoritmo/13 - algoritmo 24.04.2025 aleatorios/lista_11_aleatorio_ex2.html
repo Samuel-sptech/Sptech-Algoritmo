@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="gerar()">Sortear time</button>
+<br>
+
+    <img id="img_time" height="150px" width="150px">
+
+</body>
+
+</html>
+
+<script>
+    function gerar() {
+        var msg = ``;
+        var random = Math.random();
+        random*= 4
+        random = parseInt(random);
+
+        if (random == 0) {
+           msg = `https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/2090px-Santos_logo.svg.png`; 
+        } else if (random == 1) {
+            msg = `https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/1024px-Palmeiras_logo.svg.png`;
+        } else if (random == 2) {
+            msg = `https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1200px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png`;
+        } else {
+            msg = `https://a.espncdn.com/i/teamlogos/soccer/500/874.png`;
+        }
+
+        img_time.src = msg;
+    }
+
+</script>
