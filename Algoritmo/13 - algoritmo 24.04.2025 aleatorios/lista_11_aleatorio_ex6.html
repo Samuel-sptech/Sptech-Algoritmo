@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="gerar()">Sortear momento do dia</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function gerar() {
+        var msg = ``;
+        var random = Math.random();
+        random = random * 24 + 0;
+    
+        var round = parseInt(random);
+    
+        if (round <= 11){
+            msg = `Bom dia, flor do dia, são ${round}h!`;
+        } else if (round <=17){
+            msg = `Boa tarde, já vai tarde! São ${round}h!`;
+        } else {
+            msg = `Boa noite, durma bem! São ${round}h!`;
+        }
+    
+        div_msg.innerHTML = msg;
+    }
+</script>
