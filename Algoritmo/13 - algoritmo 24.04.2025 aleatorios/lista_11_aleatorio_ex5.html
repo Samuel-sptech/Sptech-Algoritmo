@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <style>
-    #btn_gerar{
+    #btn_gerar {
         width: 200px;
         height: 50px;
-        margin-left: 43%;
+        margin-left: 40%;
     }
 
     #div_pai {
@@ -30,7 +30,12 @@
         width: auto;
     }
 
-    #div_msg{
+    img {
+        height: 200px;
+        width: 200px;
+    }
+
+    #div_msg {
         text-align: center;
         border: solid 1px;
 
@@ -44,14 +49,14 @@
     <div id="div_pai">
         <div id="div_j1">
             <h1>Jogador 1</h1>
-            <img id="img_j1" height="200px" width="200px">
+            <img id="img_j1">
         </div>
 
         <h1>X</h1>
-        
+
         <div id="div_j2">
             <h1>Jogador 2</h1>
-            <img id="img_j2" height="200px" width="200px">
+            <img id="img_j2">
         </div>
     </div>
 
@@ -71,9 +76,8 @@
     function gerar() {
         var msg = ``;
 
-        var rdm1 = Math.random();
-        rdm1 = rdm1 * 3 + 1;
-        var j1 = parseInt(rdm1);
+        /*JOGADOR 1*/
+        var j1 = parseInt(Math.random() * 3 + 1);
 
         if (j1 == 1) { // pedra
             msg = `https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d4/Stone.png/revision/latest?cb=20220112085705`;
@@ -85,9 +89,8 @@
 
         img_j1.src = msg;
 
-        var rdm2 = Math.random();
-        rdm2 = rdm2 * 3 + 1;
-        var j2 = parseInt(rdm2);
+        /*JOGADOR 2*/
+        var j2 = parseInt(Math.random() * 3 + 1);
 
         if (j2 == 1) { // pedra
             msg = `https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d4/Stone.png/revision/latest?cb=20220112085705`;
@@ -99,31 +102,15 @@
 
         img_j2.src = msg;
 
-        /* e=pedra=1 / a=papel=3 / t=tesoura=2
-        j1:
-        e>t = 1>2
-        a>e = 3>1
-        t>a = 2>3
-
-        empate:
-        e-e
-        a-a
-        t-t
-
-        j2:
-        e>t
-        a>e
-        t>a
-        */
-
-        if ((j1 == 1 && j2 == 2) ||
-            (j1 == 3 && j2 == 1) ||
-            (j1 == 2 && j2 == 3)) {
+        /*QUEM GANHOU?*/
+        if (j1 == 1 && j2 == 2 ||
+            j1 == 3 && j2 == 1 ||
+            j1 == 2 && j2 == 3) {
             jgd1++;
             msg = `O jogador 1 venceu! <br>`;
-        } else if ((j2 == 1 && j1 == 2) ||
-            (j2 == 3 && j1 == 1) ||
-            (j2 == 2 && j1 == 3)) {
+        } else if (j2 == 1 && j1 == 2 ||
+            j2 == 3 && j1 == 1 ||
+            j2 == 2 && j1 == 3) {
             jgd2++;
             msg = `O jogador 2 venceu! <br>`;
         } else {
